@@ -1,0 +1,26 @@
+SignLanguageProject/
+│
+├── data/                       # FOR SIGN-TO-TEXT (Recognition)
+│   ├── landmarks/              # Landmark coordinate folders (your 46+ signs)
+│   │   ├── letter_A/           # 0.txt, 1.txt...
+│   │   ├── word_Hello/         
+│   │   └── ...
+│   │
+│   ├── assets/                 # FOR TEXT-TO-SIGN (Synthesis)
+│   │   ├── alphabet/           # A.png, B.png, C.png... (Static images)
+│   │   ├── words/              # hello.mp4, thank_you.mp4... (Videos/Gifs)
+│   │   └── space.png           # Image to represent a space between words
+│
+├── models/                     
+│   ├── model.p                 # Trained Random Forest
+│   └── metadata.json           
+│
+├── core/                       # Logic for both directions
+│   ├── collect_data.py         # Capture landmarks
+│   ├── train_classifier.py     # Train the RF model
+│   ├── sign_to_text.py         # Live webcam recognition
+│   └── text_to_sign.py         # Input text -> Display signs
+│
+├── main.py                     # Main Interface (Choose Mode)
+├── requirements.txt            
+└── sign_data.pickle
